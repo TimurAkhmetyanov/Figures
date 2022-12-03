@@ -3,6 +3,8 @@ public class Figures{
     private double P;
     private double S;
 
+    int n;
+
     public double getS() {
         return S;
     }

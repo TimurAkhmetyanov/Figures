@@ -1,4 +1,7 @@
 package figures;
 
-public class Hexagon {
+public class Hexagon extends Figures {
+    {
+        n = 6;
+    }
 }

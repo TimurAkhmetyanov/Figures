@@ -1,53 +1,62 @@
 package figures;
 
-public class Pentagon extends Figures {
-    private int a, b, c, d, e;
+import static java.lang.Math.PI;
+import static java.lang.Math.tan;
+//import static java.lang.Math.ct;
 
-    public Pentagon(int a, int b, int c, int d, int e) {
+public class Pentagon extends Figures {
+    private double a, b, c, d, e;
+
+    {
+        n = 5;
+    }
+
+    public Pentagon(double a, double b, double c, double d, double e) {
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
         this.e = e;
+        setP(a + b + c + d + e);
     }
 
-    public int getA() {
+    public double getA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public int getB() {
+    public double getB() {
         return b;
     }
 
-    public void setB(int b) {
+    public void setB(double b) {
         this.b = b;
     }
 
-    public int getC() {
+    public double getC() {
         return c;
     }
 
-    public void setC(int c) {
+    public void setC(double c) {
         this.c = c;
     }
 
-    public int getD() {
+    public double getD() {
         return d;
     }
 
-    public void setD(int d) {
+    public void setD(double d) {
         this.d = d;
     }
 
-    public int getE() {
+    public double getE() {
         return e;
     }
 
-    public void setE(int e) {
+    public void setE(double e) {
         this.e = e;
     }
 
@@ -69,5 +78,26 @@ public class Pentagon extends Figures {
     @Override
     public void setP(double p) {
         super.setP(p);
+    }
+}
+
+class RightPentagon extends Pentagon implements Calculations{
+
+    {
+        n = 5;
+    }
+
+    public RightPentagon(double a, double b, double c, double d, double e) {
+        super(a, a, a, a, a);
+    }
+
+    @Override
+    public void square() {
+        setS((n/4) * getA() * getA() * (1 / tan(PI / n)));
+    }
+
+    @Override
+    public void perimeter() {
+        setP(getA() * 5);
     }
 }
