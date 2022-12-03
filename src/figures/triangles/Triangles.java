@@ -130,12 +130,12 @@ public class Triangles extends Figures implements Calculations {
     }
 
     @Override
-    public double square() {
-        return 0;
+    public void square() {
+
     }
 
     @Override
-    public double perimeter() {
-        return 0;
+    public void perimeter() {
+
     }
 }
